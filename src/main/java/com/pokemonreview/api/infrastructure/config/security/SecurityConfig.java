@@ -1,5 +1,6 @@
 package com.pokemonreview.api.infrastructure.config.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -8,6 +9,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.DefaultSecurityFilterChain;
@@ -17,10 +19,20 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
     
+    private JwtAuthEntryPoint authEntryPoint;
+    private UserDetailsService userDetailsService;
+    
+    
+    public SecurityConfig(UserDetailsService userDetailsService, JwtAuthEntryPoint authEntryPoint) {
+        this.userDetailsService = userDetailsService;
+        this.authEntryPoint = authEntryPoint;
+    }
+    
     @Bean
     @Order(1)
     public DefaultSecurityFilterChain freeForAllFilterChain(HttpSecurity http) throws Exception {
         http
+                .exceptionHandling(Customizer.withDefaults())
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> {
                     authorize
