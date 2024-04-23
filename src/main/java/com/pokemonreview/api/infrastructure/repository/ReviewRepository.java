@@ -1,6 +1,6 @@
 package com.pokemonreview.api.infrastructure.repository;
 
-import com.pokemonreview.api.domain.model.Review;
+import com.pokemonreview.api.domain.model.review.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,17 +1,15 @@
-package com.pokemonreview.api.domain.model;
+package com.pokemonreview.api.domain.model.review;
 
-import com.pokemonreview.api.presentation.pokemon.dto.PokemonDto;
+import com.pokemonreview.api.domain.model.pokemon.Pokemon;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Builder
-@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

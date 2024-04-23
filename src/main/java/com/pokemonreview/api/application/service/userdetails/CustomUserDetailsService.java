@@ -1,9 +1,9 @@
-package com.pokemonreview.api.infrastructure.config.security.custom;
+package com.pokemonreview.api.application.service.userdetails;
 
-import com.pokemonreview.api.domain.model.UserEntity;
+import com.pokemonreview.api.domain.model.user.UserEntity;
 import com.pokemonreview.api.infrastructure.repository.RoleRepository;
 import com.pokemonreview.api.infrastructure.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,9 +11,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
+@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
     
     private UserRepository userRepository;

@@ -1,6 +1,6 @@
 package com.pokemonreview.api.application.mappers;
 
-import com.pokemonreview.api.domain.model.Pokemon;
+import com.pokemonreview.api.domain.model.pokemon.Pokemon;
 import com.pokemonreview.api.presentation.pokemon.dto.PokemonDto;
 import org.springframework.stereotype.Component;
 

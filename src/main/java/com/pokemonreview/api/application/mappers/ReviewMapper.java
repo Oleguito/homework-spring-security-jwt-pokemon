@@ -1,6 +1,6 @@
 package com.pokemonreview.api.application.mappers;
 
-import com.pokemonreview.api.domain.model.Review;
+import com.pokemonreview.api.domain.model.review.Review;
 import com.pokemonreview.api.presentation.review.dto.ReviewDto;
 import org.springframework.stereotype.Component;
 

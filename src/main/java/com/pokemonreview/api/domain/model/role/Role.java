@@ -1,10 +1,9 @@
-package com.pokemonreview.api.domain.model;
+package com.pokemonreview.api.domain.model.role;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
-import java.util.List;
 import java.util.Objects;
 
 @Getter

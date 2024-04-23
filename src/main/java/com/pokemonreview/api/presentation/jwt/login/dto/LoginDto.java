@@ -1,4 +1,4 @@
-package com.pokemonreview.api.presentation.login.dto;
+package com.pokemonreview.api.presentation.jwt.login.dto;
 
 import lombok.Data;
 
