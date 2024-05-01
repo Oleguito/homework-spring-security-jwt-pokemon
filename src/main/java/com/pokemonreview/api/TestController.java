@@ -27,4 +27,10 @@ public class TestController {
     public String forUsers(){
         return "This page should only be visible for people with <strong>USER</strong> or <strong>ADMIN</strong> role";
     }
+    
+    @GetMapping("/logout")
+    public void logout() {
+        SecurityContextHolder.getContext().setAuthentication(null);
+    }
+    
 }

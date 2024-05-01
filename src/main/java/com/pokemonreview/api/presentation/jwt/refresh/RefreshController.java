@@ -24,7 +24,7 @@ public class RefreshController {
     ) {
         System.out.println("");
         System.out.print("\"");
-        System.out.println(refreshToken);
+        System.out.println("refreshToken: " + refreshToken);
         System.out.print("\"");
         System.out.println("");
         

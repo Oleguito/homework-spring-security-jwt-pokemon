@@ -31,7 +31,7 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class SecurityConfig {
     
-    private final UserDetailsService userDetailsService;
+    // private final UserDetailsService userDetailsService;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     
     @Bean
@@ -44,11 +44,11 @@ public class SecurityConfig {
                     authorize
                             .requestMatchers("/", "/error", "/login",
                                     "/api/login", "/api/signup", "/api/refresh",
+                                    "/swagger-ui/*",
                                     "/logout", "/favicon.ico").permitAll()
                             .anyRequest().authenticated();
                 })
                 .formLogin(Customizer.withDefaults())
-                .logout(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
         
         http.headers().frameOptions().disable();

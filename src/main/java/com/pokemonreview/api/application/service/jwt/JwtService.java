@@ -23,7 +23,7 @@ public class JwtService {
     
     private final String SALT = "UsKrApmZSwEWOaJgw29UCvpsCd+a4EP9INFIIpjUGxTjWGz+oDDTFA3wJBohMzW9";
     
-    private static int accessExpiration = 1000 * 300;
+    private static int accessExpiration = 1000 * 3600;
     private static int refreshExpiration = 1000 * 3600 * 24 * 3;
     
     private SecretKey getSigningKey() {
